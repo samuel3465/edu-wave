@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> EduWave — Login</title>
+  <style>
+    :root {
+      --brand: #d32f2f;
+      --light: #fff;
+      --dark: #111827;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body {
+      display: flex;
+      height: 100vh;
+      color: var(--light);
+      background: url('images/background.jpg') center/cover no-repeat;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 0;
+    }
+    .container {
+      display: flex;
+      width: 85%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+    }
+    .welcome {
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(0,0,0,0.3);
+    }
+    .welcome h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .welcome p {
+      color: #e5e7eb;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      max-width: 400px;
+    }
+    .socials a {
+      color: #fff;
+      margin-right: 15px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+    .socials a:hover { color: var(--brand); }
+    .form-box {
+      flex: 1;
+      padding: 60px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .form-box h2 { margin-bottom: 30px; color: #fff; font-size: 1.8rem; }
+    form { width: 100%; }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 1rem;
+    }
+    .btn {
+      width: 100%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #b71c1c; }
+    .small-text { margin-top: 10px; font-size: 0.85rem; }
+    .small-text a { color: var(--brand); text-decoration: none; }
+    .small-text a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .container { flex-direction: column; text-align: center; }
+      .welcome, .form-box { padding: 40px 20px; }
+      .form-box { align-items: center; }
+      form { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="welcome">
+      <h1>Welcome Back</h1>
+      <p>Log in to continue to the EduWave International School .</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h2>Sign in</h2>
+      <form onsubmit="loginUser(event)">
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <button class="btn" type="submit">Sign in now</button>
+        <p class="small-text">Don’t have an account? <a href="register.html">Register here</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    function loginUser(e) {
+      e.preventDefault();
+      // Simulate login (You can integrate Paystack/Firebase later)
+      alert("Login successful!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
